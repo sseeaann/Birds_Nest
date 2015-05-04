@@ -11,7 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504192027) do
+ActiveRecord::Schema.define(version: 20150504222556) do
+
+  create_table "contacts", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address_street"
+    t.string   "address_apt"
+    t.string   "address_city"
+    t.string   "address_state"
+    t.integer  "address_zip"
+    t.integer  "phone"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "order_has_products", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "order_has_products", ["order_id"], name: "index_order_has_products_on_order_id"
+  add_index "order_has_products", ["product_id"], name: "index_order_has_products_on_product_id"
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price",       precision: 5, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
