@@ -1,0 +1,4 @@
+<h1>Mains#index</h1>
+<p>Birds Nest Landing Page</p>
+<p>Welcome <% if @user %><%= @user.first_name %></p>
+<%= link_to('log off', destroy_user_session_path, :method => 'delete') %><% end %>
