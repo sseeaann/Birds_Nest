@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @products = Product.all
   end
 
   def show
@@ -21,6 +22,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def addToSession
+    session[:cart] = [] if session[:cart].nil?
+
+
   end
 
   private
