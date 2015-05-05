@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Contact</title>
+</head>
+<body>
+	<h2>Add a Contact</h2>
+  <% if flash[:errors] %>
+			<div class="alert alert-dismissible alert-warning">
+				<h4>Whoops! Something went wrong.....</h4>
+			<% flash[:errors].each do |error| %>
+				<h6><%= error %></h6>
+			<% end %>
+			</div>
+  <% end %>
+	<form action="/contacts" method = 'post'>
+		<input type="text" name = "contact[first_name]" placeholder = "first name">
+		<input type="text" name = "contact[last_name]" placeholder = "last name">
+		<input type="email" name = "contact[email]" placeholder = "email">
+		<input type="number" name = "contact[phone]" placeholder = "phone number (no spaces)">
+		<input type="text" name = "contact[address_street]" placeholder ="street address">
+		<input type="text" name = "contact[address_apt]" placeholder = "apt (optional)">
+		<input type="text" name = "contact[address_city]" placeholder = "city">
+		<input type="text" name = "contact[address_state]" placeholder = "state">
+		<input type="number" name = "contact[address_zip]" placeholder = "zip code">
+		<input type="submit" value = "Add Contact" >
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	</form>
+</body>
+</html>

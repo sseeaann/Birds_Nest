@@ -13,6 +13,37 @@
   <% end %>
 
   <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :address_street %><br />
+    <%= f.text_field :address_street %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_apt %><br />
+    <%= f.text_field :address_apt %>
+  </div>
+  <div class="field">
+    <%= f.label :address_city %><br />
+    <%= f.text_field :address_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_state %><br />
+    <%= f.text_field :address_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_zip %><br />
+    <%= f.number_field :address_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>

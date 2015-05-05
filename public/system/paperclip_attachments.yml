@@ -1,5 +1,9 @@
----
+
 :Product:
   :image:
+  - :medium
+  - :thumb
+:User:
+  :avatar:
   - :medium
   - :thumb
