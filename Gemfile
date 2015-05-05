@@ -32,7 +32,8 @@ gem 'bootstrap-sass'
 gem 'hirb'
 gem 'parallax-rails'
 gem 'devise'
-
+gem 'tzinfo-data'
+gem 'paperclip'
 # Use unicorn as the app server
 # gem 'unicorn'
 
