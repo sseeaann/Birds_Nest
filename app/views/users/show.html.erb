@@ -26,7 +26,6 @@
 	<div class="jumbotron">
 	  <h1>Welcome <% if @user %><%= @user.first_name %></h1><%end%>
 	</div>
-
 	<div class="panel panel-warning">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Your profile</h3>
@@ -88,11 +87,6 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
-					<th>Phone</th>
-					<th>Address</th>
-					<th>City</th>
-					<th>State</th>
-					<th>Zip</th>
 				</tr>
 				<tr>
 	<% 			if @contacts.length > 0
@@ -100,25 +94,12 @@
 					<td><%= contact.first_name %></td>
 					<td><%= contact.last_name %></td>
 					<td><%= contact.email %></td>
-					<td><%= contact.phone %></td>
-					<td><%= contact.address_street %> <%= contact.address_apt %></td>
-					<td><%= contact.address_city %></td>
-					<td><%= contact.address_state %></td>
-					<td><%= contact.address_zip %></td>
+					<td><a href="/contacts/<%= contact.id %>/edit" class="btn btn-success panel-button">Chirp</a></td>
 				</tr>
 		<%	} end %>
 			</table>
-			<a href="/contacts/new" class="btn btn-warning panel-button">Add Contact</a>
+			<a href="/contacts/new" class="btn btn-primary panel-button">Add Bird</a>
+			<a href="/contacts" class="btn btn-primary panel-button">Manage Birds</a>
 	  </div>
 	</div>
-
-	<div class="panel panel-warning">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">Subscriptions</h3>
-	  </div>
-	  <div class="panel-body">
-	    Panel content
-	  </div>
-	</div>
-
 </div>

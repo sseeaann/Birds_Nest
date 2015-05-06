@@ -1,7 +1,25 @@
 class ContactsController < ApplicationController
 
-	def new
+	def index
+		@contacts = User.find(current_user.id).contacts
+	end
 
+	def new
+	end
+
+	def edit
+		@editContact = Contact.find(params[:id])
+	end
+
+	def update
+  		Contact.find(params[:id]).update( contact_params )
+  		redirect_to "/users/show"
+  	end
+
+
+	def destroy
+		Contact.destroy(params[:id])
+		redirect_to "/users/show"
 	end
 
 	def create
