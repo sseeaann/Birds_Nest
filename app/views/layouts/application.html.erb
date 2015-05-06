@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
+<% path = Rails.application.routes.recognize_path(request.env['PATH_INFO'])
+puts path %>
 <% if current_user %>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -26,8 +28,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/products/">Shop <span class="sr-only">(current)</span></a></li>
-        <li><a href="/">Nest</a></li>
+<%      if path[:controller] == "products" %>
+          <li class="active"><a href="/products/">Shop <span class="sr-only">(current)</span></a></li>
+          <li><a href="/">Nest</a></li>
+<%      else %>
+          <li><a href="/products/">Shop</a></li>
+
+<%        if path[:controller] == "users" %>
+            <li class="active"><a href="/">Nest <span class="sr-only">(current)</span></a></li>
+<%        else %>
+            <li><a href="/">Nest</a></li>
+<%        end %>
+<%      end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
