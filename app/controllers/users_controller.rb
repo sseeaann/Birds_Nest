@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-	
+
 
 	def show
 		@user = current_user
-		@contacts = User.find(current_user.id).contacts
+    if @user.nil?
+      redirect_to '/mains'
+    else
+		  @contacts = User.find(current_user.id).contacts
+    end
 	end
 end

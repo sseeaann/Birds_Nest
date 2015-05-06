@@ -71,7 +71,7 @@
 
 #wall_1{
   background: url('Birds_Nest_Background2.png') no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 #wall_2{
   background: url('Birds_Nest_Background3.png') no-repeat;
@@ -1174,7 +1174,8 @@ body {
   line-height: 1.42857143;
   color: #ebebeb;
   background: url('Birds_Nest_Background.png') no-repeat;
-  background-size: cover; 
+  background-color: #2b3e50;
+  background-size: cover;
 }
 input,
 button,
