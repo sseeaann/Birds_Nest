@@ -1,4 +1,207 @@
-<h1>Mains#index</h1>
-<p>Birds Nest Landing Page</p>
-<p>Welcome <% if @user %><%= @user.first_name %></p>
-<%= link_to('log off', destroy_user_session_path, :method => 'delete') %><% end %>
+<script>
+	$(document).ready(function(){
+		$(window).stellar();
+	});
+</script>
+<div class="container">
+	<h1 id="title">Bird's Nest</h1>
+</div>
+<!-- 
+<div data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);">WOOOT</div>
+<div data-0="background-color:rgb(0,0,255);transform:rotate(0deg);" data-500="background-color:rgb(255,0,0);transform:rotate(360deg);">WOOOT</div>
+</div>
+<div data-0="background-color:rgb(0,0,255);transform[bounce]:rotate(0deg);" data-500="background-color:rgb(255,0,0);transform[bounce]:rotate(360deg);">WOOOT</div> -->
+
+
+<div id="wall_1" class="image" data-stellar-background-ratio="0.2">
+	<div id="wall_2" class="image" data-stellar-background-ratio="0.3">
+		<div id="wall_3" class="image" data-stellar-background-ratio="0.5">
+
+		</div>
+	</div>
+</div>
+
+<div id="content" class="content_1" data-stellar-background-ratio="0.5">
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<h1>About the Nest</h1>	
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col-xs-3 content_info" data-stellar-background-ratio="1.0">
+			<p>Contacts</p>
+		</div>
+	</div>
+</div>
+
+<div id="wall_1" class="image" data-stellar-background-ratio="0.2">
+	<div id="wall_2" class="image" data-stellar-background-ratio="0.3"></div>
+</div>
+<div id="content" class="content_2" data-stellar-background-ratio="0.5">
+	<div class="container">
+		<h1>About the Store</h1>
+	</div>
+</div>
+<div id="wall_1" class="image" data-stellar-background-ratio="0.2">
+	<div id="wall_2" class="image" data-stellar-background-ratio="0.3">
+		<div id="wall_3" class="image" data-stellar-background-ratio="0.4">
+			<div id="content_1" class="content" data-stellar-background-ratio="1.0">
+<!-- Button trigger modal -->
+<div class="col-xs-6 reg">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal">
+	  Register
+	</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Register</h4>
+      </div>
+      <div class="modal-body">
+<!-- REGISTRATION -->
+	<form class="form-horizontal" action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<div class="form-group">
+			<label for="inputFirstName" class="col-lg-2 control-label">First Name:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control" name="user[first_name]" placeholder="First Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputLastName" class="col-lg-2 control-label">Last Name:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[last_name]" placeholder="Last Name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAddressStreet" class="col-lg-2 control-label">Address:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[address_street]" placeholder="Street Address">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAddressApt" class="col-lg-2 control-label">Apt#:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[address_apt]" placeholder="Apartment/Unit #">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAddressCity" class="col-lg-2 control-label">City:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[address_city]" placeholder="City">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAddressState" class="col-lg-2 control-label">State:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[address_state]" placeholder="State">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputAddressZip" class="col-lg-2 control-label">Zip:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[address_zip]" placeholder="Zip/Postal code">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPhone" class="col-lg-2 control-label">Phone#:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[phone]" placeholder="2065551234">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[email]" placeholder="Email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+			<div class="col-lg-9">
+				<input type="password" class="form-control"  name="user[password]" placeholder="Password">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPasswordConfirmation" class="col-lg-2 control-label">Password Confirmation:</label>
+			<div class="col-lg-9">
+				<input type="password" class="form-control"  name="user[password_confirmation]" placeholder="Password Confirmation">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2">
+				<button type="reset" class="btn btn-default">Reset</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<!-- REGISTRATION END -->
+
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<div class="col-xs-6 signInBtn">
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signInModal">
+	  Sign In
+	</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+<!-- LOGIN START -->
+	<form class="form-horizontal" action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<div class="form-group">
+			<label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+			<div class="col-lg-9">
+				<input type="text" class="form-control"  name="user[email]" placeholder="Email">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+			<div class="col-lg-9">
+				<input type="password" class="form-control"  name="user[password]" placeholder="Password">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2">
+				<button type="reset" class="btn btn-default">Reset</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<!-- LOGIN END -->
+
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
