@@ -19,7 +19,7 @@
 		height: 300px;
 	}
 
-	
+
 </style>
 
 <%= link_to('log off', destroy_user_session_path, :method => 'delete') %>
@@ -72,13 +72,13 @@
 			</div>
 			<div class="profile-info">
 				<ul class = "profile">
-					<li class = "avatar"><%= image_tag @user.avatar.url %></li>
+					<li class = "avatar"><%= image_tag @user.avatar.url(:medium) %></li>
 				</ul>
 			</div>
 			<a href="/users/edit" class="btn btn-warning panel-button">Edit Profile</a>
 		</div>
 	</div>
-	
+
 	<div class="panel panel-warning">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Baby Birds</h3>
@@ -96,7 +96,7 @@
 					<th>Zip</th>
 				</tr>
 				<tr>
-	<% 			if @contacts.length > 0 
+	<% 			if @contacts.length > 0
 							@contacts.each{ | contact | %>
 					<td><%= contact.first_name %></td>
 					<td><%= contact.last_name %></td>
