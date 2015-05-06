@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Bird</title>
+</head>
+<body>
+	<div class="container">
+		<h2>Editing Bird</h2>
+		<form action="/contacts/<%= @editContact.id %>" method = "post">
+			<label for="contact[first_name]">First name</label>
+			<input type="text" name = "contact[first_name]" value = "<%= @editContact.first_name %>">
+			<label for="contact[last_name]">Last name</label>
+			<input type="text" name = "contact[last_name]" value = "<%= @editContact.last_name %>">
+			<label for="contact[email_address]">Email</label>
+			<input type="email" name = "contact[email]" value = "<%= @editContact.email %>">
+			<label for="contact[phone]">Phone</label>
+			<input type="number" name = "contact[email_address]" value = "<%= @editContact.phone %>">
+			<label for="contact[address_street]">Street Address</label>
+			<input type="string" name = "contact[address_street]" value = "<%= @editContact.address_street %>">
+			<label for="contact[address_apt]">Apartment (optional)</label>
+			<input type="string" name = "contact[address_apt]" value = "<%= @editContact.address_apt %>">
+			<label for="contact[address_city]">City</label>
+			<input type="string" name = "contact[address_city]" value = "<%= @editContact.address_city %>">
+			<label for="contact[address_city]">State</label>
+			<input type="string" name = "contact[address_state]" value = "<%= @editContact.address_state %>">
+			<label for="contact[address_city]">Zip</label>
+			<input type="string" name = "contact[address_zip]" value = "<%= @editContact.address_zip %>">
+			<input type="submit" value = "Update" class = 'createButton'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<input type="hidden" name="_method" value = "put">
+		</form>
+	</div>
+</body>
+</html>
