@@ -32,6 +32,8 @@ gem 'hirb'
 gem 'devise'
 gem 'tzinfo-data'
 gem 'paperclip'
+gem 'stellar-js-rails'
+gem 'simple_form'
 # Use unicorn as the app server
 # gem 'unicorn'
 
