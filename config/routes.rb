@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :contacts
   resources :mains
-  root 'users#show''
+  root 'users#show'
 
 
 
