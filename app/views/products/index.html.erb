@@ -1,11 +1,12 @@
 <div class="container-fluid">
 <%  @products.each do |product|
 %>
-    <div class="col-xs-4">
+    <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
         <img src="<%=product.image.url(:thumb)%>" alt="Product image <%=product.id%>">
         <div class="caption">
-          <h2 class="text-center"><%="$%5.2f" % product.price%></h2>
+          <h2 class="text-center"><%= product.name %></h2>
+          <h3 class="text-center"><%="$%5.2f" % product.price%></h3>
           <p class="text-center">
             <a href="/products/<%=product.id%>" class="btn btn btn-primary" role="button">View</a>
           </p>
