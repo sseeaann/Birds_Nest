@@ -18,10 +18,12 @@
 }
 
 .reg, .signInBtn{
-  top: 20%;
-  text-align: center;
+  top: 10%;
 }
-
+#button{
+  border-radius: 40%;
+  padding: 5px;
+}
 
 .image{
   height: 100vh;
@@ -50,7 +52,7 @@
 }
 
 #wall_1{
-  background: url('Birds_Nest_Background2.png') no-repeat;
+  background: url('Background_MtRainier2.png') no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -60,14 +62,31 @@
   background-attachment: fixed;
 }
 #wall_3{
-  background: url('Birds_Nest_Background4.png') no-repeat;
+  background: url('Background_Mid_Terrain.png') no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 #wall_4{
-  background: url('Birds_Nest_Branch.png') no-repeat;
-  background-size: cover;
+  background: url('Birds_Nest2.png') no-repeat;
+  background-size: 100vw 80vh;
+  background-position: center 170%;
   background-attachment: fixed;
+}
+#wall_sea{
+  background: url('Background_Seattle.png') no-repeat;
+  background-attachment: fixed;
+}
+#egg{
+  background: url('Egg_Cracked.png') no-repeat;
+  background-attachment: fixed;
+  background-position: right center;
+  background-size: 30%;
+}
+#chickShock{
+  background: url('Chick_Shock.png') no-repeat;
+  background-attachment: fixed;
+  background-position: left center;
+  background-size: 30%;
 }
 
 .about{
@@ -103,6 +122,23 @@
     margin: auto;
     margin-bottom: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Bootstrap Theme*/
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 
